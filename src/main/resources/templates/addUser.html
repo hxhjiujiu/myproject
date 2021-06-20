@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>众创系统</title>
+<link th:href="@{css/bootstrap.min.css}" rel="stylesheet">
+<script th:src="@{js/jquery-3.2.1.min.js}"></script>
+<script th:src="@{js/bootstrap.min.js}"></script>
+<!-- <script  th:src="@{js/index.js}"></script> -->
+<link th:href="@{css/index.css}" rel="stylesheet">
+
+</head>
+<body>
+	<!--抽取公共的-->
+	<div th:replace="index::top"></div>
+	<div class="container-fluid">
+		<div class="row">
+			<div th:replace="index::chebie(activeUrl='golist')"></div>
+
+			<div class="col-md-10">
+				<form th:action="@{/user}" method="post">
+					<div class="form-group">
+						<label for="exampleInputEmail1">用户名</label> <input type="text"
+							class="form-control" id="exampleInputEmail1"  name="name">
+					</div>
+					<div class="form-group">
+						<label for="exampleInputEmail1">性别</label> <select name="sex"
+							class="form-control">
+							<option>男</option>
+							<option>女</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPassword1">手机号码</label> <input type="text"
+							class="form-control" id="exampleInputPassword1"
+							 name="phonenumber">
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPassword1">Email</label> <input type="email"
+							class="form-control" id="exampleInputPassword1"
+						 name="email">
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPassword1">会员信息</label> <input type="text"
+							class="form-control" id="exampleInputPassword1"
+							 name="member">
+					</div>
+					<button type="submit" class="btn btn-success">添加用户</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

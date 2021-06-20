@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace表示命名空间 -->
+<mapper namespace="com.hxh.dao.UserMapper">
+	<select id="findAll" resultType="com.hxh.domin.User">
+		SELECT * FROM userlist
+	</select>
+	<insert id="addUser" parameterType="com.hxh.domin.User">
+		INSERT INTO userlist
+		(NAME,sex,phonenumber,email,member)
+		VALUES(#{name},#{sex},#{phonenumber},#{email},#{member})
+	</insert>
+	<select id="findByIdUser" resultType="com.hxh.domin.User"
+		parameterType="Integer">
+		SELECT * FROM userlist where id=#{id}
+	</select>
+	<delete id="deleteByIdUser" parameterType="Integer">
+		DELETE FROM userlist WHERE id=#{id}
+	</delete>
+	<select id="findByLike" resultType="com.hxh.domin.User"
+		parameterType="String">
+		SELECT * FROM userlist where name like
+		concat('%',#{name},'%')
+	</select>
+	<update id="updateUser" parameterType="com.hxh.domin.User">
+		UPDATE userlist SET name=#{name},
+		sex=#{sex},phonenumber=#{phonenumber},email=#{email},
+		member=#{member} WHERE id=#{id}
+	</update>
+
+
+</mapper>

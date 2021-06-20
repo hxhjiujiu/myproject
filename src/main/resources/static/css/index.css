@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.428571429;
+	color: #333333;
+	background-color: #ffffff;
+	height: 100%;
+	overflow:hidden;
+}
+html,body{
+	margin: 0px;
+	padding: 0px;
+}
+
+.menu>label {
+	line-height: 35px;
+	margin-left: 15px;
+}
+
+.navbar-default {
+	background-color: #3c8dbc;
+}
+.col-md-2{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+.nav_l{
+	height: 100000px;
+}
